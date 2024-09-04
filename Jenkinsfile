@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Build') {
     					steps {
-    					    bat "\"${tool 'MSBuild'}\" MVC.sln   /t:restore  /p:outdir=Publish /p:deployonbuild=true /p:Configuration=Debug /p:Platform=\"Any CPU\" "
+    					    bat "\"${tool 'MSBuild'}\" *.sln   /t:restore  /p:outdir=Publish /p:deployonbuild=true /p:Configuration=Debug /p:Platform=\"Any CPU\" "
     					    //powershell 'MsBuild MVC.sln   /t:restore /t:build /p:Configuration=Debug /p:Platform="Any CPU"'
     					    
     					}
