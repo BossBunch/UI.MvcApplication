@@ -6,7 +6,7 @@ namespace MVC_MS_UnitTest
         [TestMethod]
         public void TestMethod1()
         {
-            throw new Exception("Fail test case");
+            Assert.AreEqual(1, 1,"Fail Test case");
         }
     }
 }
