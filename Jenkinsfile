@@ -10,21 +10,21 @@ pipeline {
         stage('Build') {
     					steps {
     					    bat "dotnet restore MVC/MVC.csproj"
-    				  		bat "dotnet build MVC/MVC.csproj -c Release -o /app/build"
-	    			   	    bat "dotnet publish MVC/MVC.csproj -c Release -o /app/publish"
+    				  		bat "dotnet build MVC/MVC.csproj -c Release -o app/build"
+	    			   	    bat "dotnet publish MVC/MVC.csproj -c Release -o app/publish"
     					    
     					}
 				}
 
         stage('Test') {
                     steps {
-                         bat 'dotnet test  --logger:"trx;LogFilePrefix=testResults"  --results-directory "/app/tests"'
+                         bat 'dotnet test  --logger:"trx;LogFilePrefix=testResults"  --results-directory "app/tests"'
                             }
                     }
     }
     post {
     always {
-      mstest(testResultsFile: "/app/tests/*.trx", failOnError: false, keepLongStdio: true)
+      mstest(testResultsFile: "**/*.trx", failOnError: false, keepLongStdio: true)
     }
   }
 }
