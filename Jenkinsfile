@@ -18,7 +18,7 @@ pipeline {
 
         stage('Test') {
                     steps {
-                         bat "dotnet test -t --collect "Code Coverage" --logger "trx;logfilename=testResults.trx" --results-directory /app/tests/"
+                         bat 'dotnet test -t --collect "Code Coverage" --logger "trx;logfilename=testResults.trx" --results-directory /app/tests/'
                             }
                     }
     }
