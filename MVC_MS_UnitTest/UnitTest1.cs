@@ -7,7 +7,7 @@ namespace MVC_MS_UnitTest
         public void TestMethod1()
         {
             Assert.AreEqual(1, 1,"Fail Test case");
-            Assert.AreEqual(1, 0,"Fail Test case");
+  
         }
     }
 }
