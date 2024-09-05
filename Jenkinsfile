@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Build') {
     					steps {
-    					    bat "\"${tool 'MSBuild'}\" dotnet restore MVC/MVC.csproj"  					    
+    					    bat "dotnet restore MVC/MVC.csproj"  					    
     					}
 				}
     }
