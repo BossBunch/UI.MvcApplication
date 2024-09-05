@@ -18,7 +18,7 @@ pipeline {
 
         stage('Test') {
                     steps {
-                        sh(script: 'dotnet test -l:trx || true')        
+                         bat "dotnet test -o /app/testResult --results-directory /app/tests/"
                             }
                     }
     }
