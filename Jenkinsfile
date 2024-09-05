@@ -24,7 +24,7 @@ pipeline {
     }
     post {
     always {
-      mstest(testResultsFile: 'C:\app\tests\testResults.trx', failOnError: false, keepLongStdio: true)
+      mstest(testResultsFile: 'C:\app\tests\*.trx', failOnError: false, keepLongStdio: true)
     }
   }
 }
