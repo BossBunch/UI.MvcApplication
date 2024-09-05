@@ -18,13 +18,13 @@ pipeline {
 
         stage('Test') {
                     steps {
-                         bat 'dotnet test -t --collect "Code Coverage" --logger "trx;logfilename=testResults.trx" --results-directory /app/tests/'
+                         bat 'dotnet test  --logger:"trx;LogFilePrefix=testResults"  --results-directory "C:\app\tests"'
                             }
                     }
     }
     post {
     always {
-      mstest(testResultsFile: '**/*.trx', failOnError: false, keepLongStdio: true)
+      mstest(testResultsFile: 'C:\app\tests\testResults.trx', failOnError: false, keepLongStdio: true)
     }
   }
 }
