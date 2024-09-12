@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+	    label 'WindowsJenkinsAgent'
+    }
 
     stages {
         stage('Hello') {
