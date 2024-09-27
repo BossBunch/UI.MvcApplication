@@ -4,9 +4,12 @@ pipeline {
     }
 
     stages {
-        steps
+	    stage('Test')
 	    {
+        	steps
+	    	{
 		    bat  'echo "my first pipeline'
   		}
+	    }
     }
 }
