@@ -8,4 +8,5 @@ pipeline {
 	    {
 		    bat  'echo "my first pipeline'
   		}
+    }
 }
