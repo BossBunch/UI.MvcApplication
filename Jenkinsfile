@@ -4,12 +4,14 @@ pipeline {
     }
 
     stages {
-	    stage('Test')
+	    stage('Checkout')
 	    {
         	steps
 	    	{
-		    bat  'echo "my first pipeline'
-  		}
+				cleanWs()
+				
+				checkout scm
+  		    }
 	    }
     }
 }
