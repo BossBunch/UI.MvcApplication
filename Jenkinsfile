@@ -8,7 +8,11 @@ pipeline {
 	    	{
 				cleanWs()
 				
-				checkout scm
+				checkout scmGit(branches: 
+                    [[name: 'stable-2.289']],
+                        userRemoteConfigs: [
+                            [ url: 'https://github.com/BossBunch/UI.MvcApplication.git' ]
+                ]))
   		    }
 	    }
     }
