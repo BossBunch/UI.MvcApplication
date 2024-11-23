@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-	    label 'WindowsJenkinsAgent'
-    }
+    agent any
 
     stages {
 	    stage('Checkout')
